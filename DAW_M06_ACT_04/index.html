@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="estilo.css">
+  <title>Actividad 4</title>
+</head>
+<body>
+  <h1>Actividad 04</h1>
+  <h2>Controles : </h2>
+  <label for="nombre">Nombre : </label>
+  <input id="nombre" type="text" placeholder="Nombre" />
+  <label for="color">Color : </label>
+  <input id="color" type="color" placeholder="Color" />
+  <button onclick="addParticipante()">AÑADE PARTICIPANTE</button><br>
+
+  <button onclick="finalizaCompeticion()">FINALIZA COMPETICIÓN</button><br>
+
+  <label for="posicion">Posición : </label>
+  <input id="posicion" type="text" placeholder="Posición" />
+  <button onclick="borraParticipante()">BORRA PARTICIPANTE</button><br>
+  <p id="msgError"></p>
+  <label for="posicionFinal">Posición final : </label>
+  <input id="posicionFinal" type="text" placeholder="Posición final" />
+  <button onclick="mueveParticipante()">MUEVE PARTICIPANTE</button><br>
+  <p id="msgErrorFinal"></p>
+  <button onclick="modificaParticipante()">MODIFICA PARTICIPANTE</button><br>
+
+  <h2>Participantes : </h2>
+  <ol id="listadoParticipantes">
+  </ol>
+
+  <script src="actividad04.js"></script>
+</body>
+</html>

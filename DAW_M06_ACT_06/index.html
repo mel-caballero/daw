@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Actividad 6</title>
+  
+  <style>
+    body {margin: 20px;}
+    fieldset { margin: 10px; }
+    button { margin: 10px 0; }
+  </style>
+</head>
+<body>
+  <h1>Actividad 6</h1>
+  <h2>Guarda combinación</h2>
+  <p>Escribe 4 números del 0 al 9 y guarda la combinación para jugar.</p>
+  <fieldset class="input-group">
+    <div class="col input-group-prepend">
+      <legend class="input-group-text">Combinación</legend>
+    </div>
+    <input type="number" id="num1" class="col" oninput="chechNum(this)">
+    <i id="resp1" class="col"></i>
+    <input type="number" id="num2" class="col" oninput="chechNum(this)">
+    <i id="resp2" class="col"></i>
+    <input type="number" id="num3" class="col" oninput="chechNum(this)">
+    <i id="resp3" class="col"></i>
+    <input type="number" id="num4" class="col" oninput="chechNum(this)">
+    <i id="resp4" class="col"></i><br>
+    <button type="button" class="btn btn-primary btn-lg btn-block" onclick="saveCombination()">Guardar combinación</button>
+  </fieldset>
+  <!-- 3.4. Ambos mensajes se muestran al usuario. -->
+  <p id="saveResponse"></p>
+  <h2>Adivina la combinación</h2>
+  <p>Introduce la combinación de números para adivinar la combinación guardada.</p>
+  <fieldset class="input-group">
+    <div class="col input-group-prepend">
+      <legend class="input-group-text">Adivina</legend>
+    </div>
+    <input type="number" id="chck1" class="col" oninput="compareNums(this)">
+    <i id="comp1" class="col"></i>
+    <input type="number" id="chck2" class="col" oninput="compareNums(this)">
+    <i id="comp2" class="col"></i>
+    <input type="number" id="chck3" class="col" oninput="compareNums(this)">
+    <i id="comp3" class="col"></i>
+    <input type="number" id="chck4" class="col" oninput="compareNums(this)">
+    <i id="comp4" class="col"></i><br>
+    <button type="button" class="btn btn-secondary btn-lg btn-block" onclick="checkCombination()">Comprueba combinación</button>
+  </fieldset>
+  <!-- EJRECICIO 5.4. Ambos mensajes se muestran al usuario. --> 
+  <p id="compareResponse"></p>
+
+  <script src="actividad06.js"></script>
+</body>
+</html>

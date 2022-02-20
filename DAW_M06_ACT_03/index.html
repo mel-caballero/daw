@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Actividad 3</title>
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+  <h1>Creador de coches</h1>
+
+  <!-- EJERCICIO 7 -->
+  <div>
+    <h2>Extras disponibles</h2>
+    <p id="extras"></p>
+  </div>
+
+  <!-- EJERCICIO 9 -->
+  <div>
+    <h2>Coches disponibles</h2>
+    <p id="disponibles"></p>
+  </div>
+
+  <!-- EJERCICIO 10
+      Crea la estructura HTML que se muestra a continuación ∫y programa el botón ADD EXTRA para que añada en extrasDisponibles un nuevo extra con el precio indicado y la imagen seleccionada del select y actualice visualmente todos los extras disponibles (llama a mostrarExtras() )
+    -->
+  <div>
+    <h2>Gestiona Extras</h2>
+    <input id="precio" type="number" placeholder="Precio" />
+    <select id="imagen" name="imagen">
+      <option value="concha_azul">Concha Azul</option>
+      <option value="estrella" selected>Estrella</option>
+    </select>
+    <button onclick="addExtraDisponible()">ADD EXTRA</button>
+    <!-- EJERCICIO 11
+      Crea la estructura HTML que se muestra a continuación y programa el botón BORRAR para que borre de extrasDisponibles el número de extra indicado (el número es la posición que ocupa el extra dentro del array de extrasDisponibles)
+    -->
+    <span>Posición a borrar</span>
+    <input id="numero" type="number" placeholder="Numero" />
+    <button onclick="deleteExtraDisponible()">BORRAR</button>
+  </div>
+
+  <!--EJERCICIO 12
+    Crea la estructura HTML que se muestra a continuación y programa el botón ADD COCHE para que añada a cochesDisponibles un nuevo coche con el nombre y la velocidad máxima indicada y actualice visualmente todos los coches disponibles (llama a mostrarCoches() )
+  -->
+  <div>
+    <h2>Crea un coche disponible</h2>
+    <input id="nombre" type="text" placeholder="Nombre" />
+    <input id="velocidad" type="number" placeholder="Velocidad" min="0" max="300"/>
+    <span>Km/h</span>
+    <button onclick="addCoche()">ADD COCHE</button>
+  </div>
+
+  <!--EJERCICIO 13
+    Crea la estructura HTML que se muestra a continuación y modifica  mostrarExtras() para que por cada extra se añada un option al select con el número de extra , y modifica mostrarCoches() para que por cada coche  se añada un option al select con el nombre del coche.
+  -->
+  <div>
+    <h2>Asigna un extra a un coche</h2>
+    <span>Extra: </span>
+    <select id="extraOption" name="extra">
+    </select>
+    <span>Nombre Coche: </span>
+    <select id="nombreCoche" name="nombreCoche">
+    </select>
+    <!-- EJERCICIO 14
+      Programa el botón ADD EXTRA COCHE para que añada al coche seleccionado  el número de extra seleccionado y actualice visualmente todos los coches disponibles.
+    -->
+    <button onclick="addExtraCoche()">ADD EXTRA COCHE</button>
+  </div>
+  
+  <script src="actividad03.js"></script>
+</body>
+</html> 

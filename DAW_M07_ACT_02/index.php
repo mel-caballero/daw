@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Actividad 2 de M07">
+  <meta name="author" content="Melanie Caballero">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="styles/styles.css">
+  <title>Actividad 2</title>
+</head>
+<body class="container">
+  <h1>M07 Actividad 2</h1>
+  <div> <!-- Ejercicio 1 -->
+    <h2>Ejercicio 1.</h2>
+    <div class="enunciado">
+      <p>Escribe un programa en el que se declare un array asociativo para guardar las notas de unos alumnos. Las claves del array serán los nombres de los alumnos y los valores serán las notas de cada uno.</p>
+      <p>El programa deberá hacer las operaciones necesarias para mostrar los siguientes mensajes:</p>
+      <p>La nota más alta es la de David con un 9.</p>
+      <p>La nota más baja es la de Sandra con un 3.</p>
+      <p>La nota media de la clase es 6.4.</p>
+      <p>Además, se mostrarán los nombres de los alumnos, acompañados de su nota, ordenados por esta última (ascendentemente).</p>
+    </div>
+    <div class="respuesta">
+      <?php
+        $notas = ["David" => 9, "Sandra" => 3, "Sergi" => 8];
+
+        $nota_max = max($notas);
+        $nombre_max = array_search($nota_max, $notas);
+        echo "<p>La nota más alta es la de $nombre_max con un $nota_max.</p>";
+
+        $nota_min = min($notas);
+        $nombre_min = array_search($nota_min, $notas);
+        echo "<p>La nota más baja es la de $nombre_min con un $nota_min.</p>";
+
+        $media = round(array_sum($notas) / count($notas), 2);
+        echo "<p>La nota media de la clase es $media</p>";
+
+        $orden = asort($notas);
+        echo "<p>";
+        foreach ($notas as $key => $value) {
+          echo "$key - $value. ";
+        }
+        echo "</p>";
+      ?>
+    </div>
+    
+  </div>
+  <div> <!-- Ejercicio 2 -->
+    <h2>Ejercicio 2.</h2>
+    <p><strong>Realizar una aplicación que simule una calculadora. Constará de una página HTML con dos campos de texto para introducir los dos operadores, y 4 RadioButtons para seleccionar la operación: suma, resta, multiplicación y división. Se mostrará el resultado de la operación en una segunda página con la frase “El resultado de la suma/resta/multiplicación/división es XXX”.</strong></p>
+    <p><strong>Hacer el programa usando un formulario de tipo POST.</strong></p>
+    <?php
+      
+    ?>
+  </div>
+  <div> <!-- Ejercicio 3 -->
+    <h2>Ejercicio 3.</h2>
+    <p><strong>Crea una aplicación que parta de un formulario en que se pida un valor numérico al usuario bajo el título “¿Cuántas veces?”. Al darle al botón de envío del formulario, se ejecutará un script PHP que, primero comprobará que existe la variable proveniente del formulario y, luego, repetirá tantas veces como indique el valor introducido por el usuario la siguiente frase:</strong></p>
+    <p><strong>1.- Los bucles son fáciles!</strong></p>
+    <?php
+      
+    ?>
+  </div>
+  <div> <!-- Ejercicio 4 -->
+    <h2>Ejercicio 4.</h2>
+    <p><strong>Escribir un programa que pida la nota de un examen, y muestre la calificación obtenida. La calificación podrá ser:</strong></p>
+    <?php
+      
+    ?>
+  </div>
+  <div> <!-- Ejercicio 5 -->
+    <h2>Ejercicio 5.</h2>
+    <p><strong>Escribir un programa que nos pida un número de DNI y nos calcule la letra. El cálculo se realiza dividiendo el número entre 23 y el resto se sustituye por letra que corresponde mediante la siguiente tabla:</strong></p>
+    <?php
+      
+    ?>
+  </div>
+</body>
+</html>

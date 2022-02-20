@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="estilo.css">
+  <title>Actividad 5</title>
+</head>
+<body>
+  <form name="myForm" onsubmit="return register(event)">
+    <label for="product">Nombre Producto : </label>
+    <input id="product" type="text" placeholder="Nombre del producto" oninput="writeTextArea()" /><br>
+
+    <label for="codeBar">Código de Barras : </label>
+    <input id="codeBar" type="text" placeholder="Código de Barras" oninput="writeTextArea()" /><br>
+
+    Caducidad : 
+    <label for="day">Día : </label>
+    <input id="day" type="text" placeholder="Día" oninput="writeTextArea()" />
+
+    <label for="month">Mes : </label>
+    <input id="month" type="text" placeholder="Mes" oninput="writeTextArea()" />
+
+    <label for="year">Año : </label>
+    <input id="year" type="text" placeholder="Año" oninput="writeTextArea()" /><br>
+
+    <label for="offer">Oferta :</label>
+    <select id="offer" name="cars" onchange="writeTextArea()">
+      <option value="normal">Normal</option>
+      <option value="dosuno">2x1</option>
+      <option value="veinte">20%</option>
+      <option value="diez">10%</option>
+    </select><br>
+
+    <label>
+      <input type="checkbox" name="foodType" value="congelado" onclick="writeTextArea()" >Congelado
+    </label>
+    <label><input type="checkbox" name="foodType" value="fruta" onclick="writeTextArea()" >Fruta</label>
+    <label><input type="checkbox" name="foodType" value="snack" onclick="writeTextArea()" >Snack</label><br>
+
+    <button id="enviar" type="submit">Regístrate</button>
+  
+    <button type="button" onclick="clearData()">Limpia el formulario</button>
+    <!--<button type="reset">Limpia el formulario</button> -->
+    <button type="button" onclick="saveData()">Guardar Datos</button>
+    <button type="button" onclick="recoverData()">Recuperar Datos</button><br>
+    
+    <textarea id="data" name="textarea" rows="6" cols="70" placeholder="Información" disabled="disabled"></textarea>
+</form> 
+  
+  <script src="actividad05.js"></script>
+</body>
+</html>
