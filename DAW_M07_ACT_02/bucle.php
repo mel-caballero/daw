@@ -1,14 +1,16 @@
 <?php
   if (isset($_POST["num"])) {
-    $num = $_POST["num"];
+    if (is_numeric($_POST["num"])) {
+      $num = $_POST["num"];
+    } else {
+      echo "ERROR. Debe ser un número.";
+    }
+  } else {
+    echo "ERROR. Introducir un número.";
   }
   
-  function bucle($num) {
-    for ($i = 0; $i < $num; $i++) {
-      echo $i + 1 . ".- Los bucles son fáciles!<br>";
-    }
-    echo "Se acabó!";
+  for ($i = 0; $i < $num; $i++) {
+    echo $i + 1 . ".- Los bucles son fáciles!<br>";
   }
-
-  bucle($num);
+  echo "Se acabó!";
 ?>

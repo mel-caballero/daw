@@ -9,7 +9,7 @@
   <link rel="stylesheet" type="text/css" href="styles/styles.css">
   <title>Actividad 2</title>
 </head>
-<body class="container">
+<body  class="container my-5">
   <h1>M07 Actividad 2</h1>
   <div> <!-- Ejercicio 1 -->
     <h2>Ejercicio 1.</h2>
@@ -57,14 +57,14 @@
         <label for="num1">Numero 1 </label><input type="number" name="num1">
         <label for="num2">Numero 2 </label><input type="number" name="num2">
         <br>
-        <input type="radio" name="calc" id="suma" value="suma" checked>
-        <label for="suma">Suma</label>
-        <input type="radio" name="calc" id="resta" value="resta">
-        <label for="resta">Resta</label>
-        <input type="radio" name="calc" id="multiplicacion" value="multiplicacion">
-        <label for="multiplicacion">Multiplicacion</label>
-        <input type="radio" name="calc" id="division" value="division">
-        <label for="division">Division</label>
+        <input type="radio" name="calc" id="sumar" value="sumar" checked>
+        <label for="sumar">Sumar</label>
+        <input type="radio" name="calc" id="restar" value="restar">
+        <label for="restar">Restar</label>
+        <input type="radio" name="calc" id="multiplicar" value="multiplicar">
+        <label for="multiplicar">Multiplicar</label>
+        <input type="radio" name="calc" id="dividir" value="dividir">
+        <label for="dividir">Dividir</label>
         <br>
         <input type="submit" name="calcular" value="Calcular">
       </form>
@@ -91,13 +91,10 @@
     </div>
     <div class="respuesta">
       <form action="nota.php" method="POST">
-        <label for="nota">Nota: </label><input type="number" name="nota" min="0" max="10" step="0.01">
-        <input type="submit" name="calcularNota" value="Enviar">
+        <label for="nota">Nota: </label><input type="number" name="nota" min="0" max="10" step="0.01" value="0">
+        <input type="submit" name="calcularNota" value="Calcular nota">
       </form>
     </div>
-    <?php
-      
-    ?>
   </div>
   <div> <!-- Ejercicio 5 -->
     <h2>Ejercicio 5.</h2>
@@ -105,12 +102,11 @@
       <p>Escribir un programa que nos pida un número de DNI y nos calcule la letra. El cálculo se realiza dividiendo el número entre 23 y el resto se sustituye por letra que corresponde mediante la siguiente tabla:</p>
     </div>
     <div class="respuesta">
-
+      <form action="dni.php" method="POST">
+        <label for="dni">Introduce los números del DNI </label><input type="text" pattern="[0-9]{8}" name="dni">
+        <input type="submit" name="calcularLetra" value="Calcular letra">
+      </form>
     </div>
-    
-    <?php
-      
-    ?>
   </div>
 </body>
 </html>

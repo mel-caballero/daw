@@ -1,27 +1,33 @@
 <?php
   if (isset($_POST["num1"]) && isset($_POST["num2"]) && isset($_POST["calc"])) {
-    $num1 = $_POST["num1"];
-    $num2 = $_POST["num2"];
+    if (is_numeric($_POST["num1"]) && is_numeric($_POST["num2"])) {
+      $num1 = $_POST["num1"];
+      $num2 = $_POST["num2"];
+    } else {
+      echo "ERROR. Deben ser números.";
+    }
     $calc = $_POST["calc"];
+  } else {
+    echo "ERROR. Debes introducir números.";
   }
   
   function calcular($num1, $num2, $calc) {
     switch ($calc) {
-      case "suma" :
+      case "sumar" :
         $suma = suma($num1, $num2);
-        echo $suma;
+        echo "El resultado de " .$calc. " " .$num1. " y " .$num2. " es " .$suma;
         break;
-      case "resta" :
+      case "restar" :
         $resta = resta($num1, $num2);
-        echo $resta;
+        echo "El resultado de " .$calc. " " .$num1. " y " .$num2. " es " .$resta;
         break;
-      case "multiplicacion" :
+      case "multiplicar" :
         $multiplicacion = multiplicacion($num1, $num2);
-        echo $multiplicacion;
+        echo "El resultado de " .$calc. " " .$num1. " y " .$num2. " es " .$multiplicacion;
         break;
-      case "division" :
+      case "dividir" :
         $division = division($num1, $num2);
-        echo $division;
+        echo "El resultado de " .$calc. " " .$num1. " y " .$num2. " es " .$division;
         break;
     }
   }
