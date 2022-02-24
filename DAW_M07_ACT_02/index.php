@@ -48,30 +48,66 @@
   </div>
   <div> <!-- Ejercicio 2 -->
     <h2>Ejercicio 2.</h2>
-    <p><strong>Realizar una aplicación que simule una calculadora. Constará de una página HTML con dos campos de texto para introducir los dos operadores, y 4 RadioButtons para seleccionar la operación: suma, resta, multiplicación y división. Se mostrará el resultado de la operación en una segunda página con la frase “El resultado de la suma/resta/multiplicación/división es XXX”.</strong></p>
-    <p><strong>Hacer el programa usando un formulario de tipo POST.</strong></p>
-    <?php
-      
-    ?>
+    <div class="enunciado">
+      <p>Realizar una aplicación que simule una calculadora. Constará de una página HTML con dos campos de texto para introducir los dos operadores, y 4 RadioButtons para seleccionar la operación: suma, resta, multiplicación y división. Se mostrará el resultado de la operación en una segunda página con la frase “El resultado de la suma/resta/multiplicación/división es XXX”.</p>
+      <p>Hacer el programa usando un formulario de tipo POST.</p>
+    </div>
+    <div class="respuesta">
+      <form action="calculadora.php" method="POST">
+        <label for="num1">Numero 1 </label><input type="number" name="num1">
+        <label for="num2">Numero 2 </label><input type="number" name="num2">
+        <br>
+        <input type="radio" name="calc" id="suma" value="suma" checked>
+        <label for="suma">Suma</label>
+        <input type="radio" name="calc" id="resta" value="resta">
+        <label for="resta">Resta</label>
+        <input type="radio" name="calc" id="multiplicacion" value="multiplicacion">
+        <label for="multiplicacion">Multiplicacion</label>
+        <input type="radio" name="calc" id="division" value="division">
+        <label for="division">Division</label>
+        <br>
+        <input type="submit" name="calcular" value="Calcular">
+      </form>
+    </div>
+
   </div>
   <div> <!-- Ejercicio 3 -->
     <h2>Ejercicio 3.</h2>
-    <p><strong>Crea una aplicación que parta de un formulario en que se pida un valor numérico al usuario bajo el título “¿Cuántas veces?”. Al darle al botón de envío del formulario, se ejecutará un script PHP que, primero comprobará que existe la variable proveniente del formulario y, luego, repetirá tantas veces como indique el valor introducido por el usuario la siguiente frase:</strong></p>
-    <p><strong>1.- Los bucles son fáciles!</strong></p>
-    <?php
-      
-    ?>
+    <div class="enunciado">
+      <p>Crea una aplicación que parta de un formulario en que se pida un valor numérico al usuario bajo el título “¿Cuántas veces?”. Al darle al botón de envío del formulario, se ejecutará un script PHP que, primero comprobará que existe la variable proveniente del formulario y, luego, repetirá tantas veces como indique el valor introducido por el usuario la siguiente frase:</p>
+      <p>1.- Los bucles son fáciles!</p>
+    </div>
+    <div class="respuesta">
+      <form action="bucle.php" method="POST">
+        <label for="num">¿Cuántas veces? </label><input type="number" name="num">
+        <input type="submit" name="bucle" value="Enviar">
+      </form>
+    </div>
   </div>
   <div> <!-- Ejercicio 4 -->
     <h2>Ejercicio 4.</h2>
-    <p><strong>Escribir un programa que pida la nota de un examen, y muestre la calificación obtenida. La calificación podrá ser:</strong></p>
+    <div class="enunciado">
+      <p>Escribir un programa que pida la nota de un examen, y muestre la calificación obtenida.</p>
+    </div>
+    <div class="respuesta">
+      <form action="nota.php" method="POST">
+        <label for="nota">Nota: </label><input type="number" name="nota" min="0" max="10" step="0.01">
+        <input type="submit" name="calcularNota" value="Enviar">
+      </form>
+    </div>
     <?php
       
     ?>
   </div>
   <div> <!-- Ejercicio 5 -->
     <h2>Ejercicio 5.</h2>
-    <p><strong>Escribir un programa que nos pida un número de DNI y nos calcule la letra. El cálculo se realiza dividiendo el número entre 23 y el resto se sustituye por letra que corresponde mediante la siguiente tabla:</strong></p>
+    <div class="enunciado">
+      <p>Escribir un programa que nos pida un número de DNI y nos calcule la letra. El cálculo se realiza dividiendo el número entre 23 y el resto se sustituye por letra que corresponde mediante la siguiente tabla:</p>
+    </div>
+    <div class="respuesta">
+
+    </div>
+    
     <?php
       
     ?>
