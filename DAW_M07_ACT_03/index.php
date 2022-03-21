@@ -111,7 +111,139 @@
     </div>
     <div class="respuesta">
       <?php
+        class Futbolista{
+          private $nombre;
+          private $dorsal;
+          private $goles;
         
+          function __construct($nombre, $dorsal, $goles){
+            $this->nombre = $nombre;
+            $this->dorsal = $dorsal;
+            $this->goles = $goles;
+          }
+        
+          function get_nombre(){
+            return $this->nombre;
+          }
+        
+          function set_nombre($nombre){
+            $this->nombre = $nombre;
+          }
+        
+          function get_dorsal(){
+            return $this->dorsal;
+          }
+        
+          function set_dorsal($dorsal){
+            $this->dorsal = $dorsal;
+          }
+        
+          function get_goles(){
+            return $this->goles;
+          }
+        
+          function set_goles($goles){
+            $this->goles = $goles;
+          }
+        
+          function __toString(){
+            return "Nombre: ".$this->nombre." | Dorsal: ".$this->dorsal.
+                " | Goles: ".$this->goles;
+          }
+        }
+
+        class Portero extends Futbolista {
+          private $paradas;
+        
+          function __construct($nombre, $dorsal, $goles, $paradas){
+            parent::__construct($nombre, $dorsal, $goles);
+            $this->paradas = $paradas;
+          }
+        
+          function get_paradas(){
+            return $this->paradas;
+          }
+        
+          function set_paradas($paradas){
+            $this->paradas = $paradas;
+          }
+        
+          function valoracion(){
+            $paradas = $this->paradas;
+            $goles = parent::get_goles();
+            return ($paradas * 5) + ($goles * 30);
+          }
+        
+          function __toString(){
+            return "PORTERO: ".parent::__toString().
+                " | Paradas: ".$this->paradas;
+          }
+        }
+
+        class Jugador extends Futbolista {
+          private $pases;
+          private $recuperaciones;
+        
+          function __construct($nombre, $dorsal, $goles, $pases, $recuperaciones){
+            parent::__construct($nombre, $dorsal, $goles);
+            $this->pases = $pases;
+            $this->recuperaciones = $recuperaciones;
+          }
+        
+          function get_pases(){
+            return $this->pases;
+          }
+        
+          function set_pases($pases){
+            $this->pases = $pases;
+          }
+
+          function get_recuperacioness(){
+            return $this->recuperaciones;
+          }
+        
+          function set_recuperaciones($recuperaciones){
+            $this->recuperaciones = $recuperaciones;
+          }
+        
+          function valoracion(){
+            $pases = $this->pases;
+            $recuperaciones = $this->recuperaciones;
+            $goles = parent::get_goles();
+            
+            return ($pases * 2) + ($recuperaciones * 3) + ($goles * 30);
+          }
+        
+          function __toString(){
+            return "JUGADOR: ".parent::__toString().
+                " | Pases: ".$this->pases." | Recuperaciones: ".$this->recuperaciones;
+          }
+        }
+        
+        // PORTERO construct($nombre, $dorsal, $goles, $paradas)
+        // JUGADOR construct($nombre, $dorsal, $goles, $pases, $recuperaciones)
+        $futbolistas = array();
+        $futbolistas[0] = new Portero("Sandra Paños", 1, 4, 30);
+        $futbolistas[1] = new Portero("Cata Coll", 13, 3, 20);
+        $futbolistas[2] = new Portero("Gema Font", 24, 6, 10);
+        $futbolistas[3] = new Jugador("Irene Paredes", 2, 21, 34, 54);
+        $futbolistas[4] = new Jugador("Jana", 3, 22, 43, 76);
+        $futbolistas[5] = new Jugador("Maria Leon", 4, 21, 24, 53);
+        $futbolistas[6] = new Jugador("M. Serrano", 5, 22, 48, 76);
+        $futbolistas[7] = new Jugador("Marta Torrejón", 8, 21, 46, 44);
+        $futbolistas[8] = new Jugador("Leila", 15, 22, 36, 76);
+        $futbolistas[9] = new Jugador("Alexia", 11, 21, 48, 54);
+        $futbolistas[10] = new Jugador("Patri", 12, 22, 35, 87);
+
+        foreach ($futbolistas as $futbolista) {
+          echo $futbolista;
+          if($futbolista instanceof Portero){
+            echo " | Valoración : ".$futbolista->valoracion()."<br/>";
+          } else if($futbolista instanceof Jugador){
+            echo " | Valoración : ".$futbolista->valoracion()."<br/>";
+          }
+        }
+
       ?>
     </div>
   </div>

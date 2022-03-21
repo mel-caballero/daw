@@ -16,3 +16,7 @@
     echo "¡FELICIDADES! ¡Has acertado el número!";
   }
 ?>
+
+<script>
+  window.setTimeout(function() { window.location = '../index.php'; }, 3000);
+</script>
