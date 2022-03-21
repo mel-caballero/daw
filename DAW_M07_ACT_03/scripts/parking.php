@@ -109,7 +109,5 @@
 ?>
 
 <script>
-window.setTimeout(function() {
-    window.location = 'index.html';
-  }, 3000);
+  window.setTimeout(function() { window.location = '../index.html'; }, 3000);
 </script>
