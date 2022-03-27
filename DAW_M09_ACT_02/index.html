@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="Melanie Caballero">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="styles/styles.css">
+  <title>Actividad 2</title>
+</head>
+<body class="container">
+  <h1>M09 Actividad 2</h1>
+  <div> <!-- Ejercicio 1 -->
+    <h2>Ejercicio 3. Contenido multimedia</h2>
+    <div class="enunciado">
+      <ol>
+        <li>Descarga un audio en .wav de https://freesound.org/ , con el software Audacity acorta el audio a 10 segundos y expórtalo en formato WAV, MP3 y OGG.</li>
+        <li>Crea una web con las imágenes JPG de la actividad anterior comprimidas al 90, 75, 50 y 25%.</li>
+        <li>Añade a la web los audios de 10segundos en formato WAV , MP3 y OGG mostrando el controlador para cada audio.</li>
+      </ol>
+      <p>La web ha de quedar aproximadamente con el siguiente aspecto:</p>
+      <img src="img/img01.png" width="50%">
+    </div>
+    <div class="respuesta container">
+      <div class="row">
+        <figure class="col-3">
+          <figcaption>JPG 90%</figcaption>
+          <img src="img/MARBLES-90.jpeg" width="100%" alt="Foto canicas al 90%">
+        </figure>
+        <figure class="col-3">
+          <figcaption>JPG 75%</figcaption>
+          <img src="img/MARBLES-75.jpeg" width="100%" alt="Foto canicas al 75%">
+        </figure>
+        <figure class="col-3">
+          <figcaption>JPG 50%</figcaption>
+          <img src="img/MARBLES-50.jpeg" width="100%" alt="Foto canicas al 50%">
+        </figure>
+        <figure class="col-3">
+          <figcaption>JPG 25%</figcaption>
+          <img src="img/MARBLES-25.jpeg" width="100%" alt="Foto canicas al 25%">
+        </figure>
+      </div>
+
+      <div class="row">
+        <div class="col-4">
+          <p>WAV</p>
+          <audio controls>
+            <source src="src/10_183881__erokia__elementary-wave-11.wav" type="audio/wav">
+          </audio>
+        </div>
+        <div class="col-4">
+          <p>MP3</p>
+          <audio controls>
+            <source src="src/10_183881__erokia__elementary-wave-11.mp3" type="audio/mp3">
+          </audio>
+        </div>
+        <div class="col-4">
+          <p>OGG</p>
+          <audio controls>
+            <source src="src/10_183881__erokia__elementary-wave-11.ogg" type="audio/ogg">
+          </audio>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <h2>Ejercicio 4. Animaciones CSS</h2>
+    <div class="enunciado">
+      <ol>
+        <li>Añade con CSS una transición a la primera imagen para que cuando el ratón se sitúe encima su anchura pase a ser el doble y se desplaze 110px hacia abajo.</li>
+        <li>Añade con CSS una animación a la segunda imagen para que cuando el ratón se sitúe encima gire primero 25 grados a la derecha y luego 25 grados a la izquierda y luego  100px hacia arriba.</li>
+      </ol>
+      <p>Nota: el estilo para girar un elemento es:  transform: rotate(25deg);</p>
+      <p>En la siguiente imagen se muestra un ejemplo del resultado:</p>
+      <img src="img/img02.png" width="50%">
+    </div>
+    <div class="respuesta container">
+      <div class="row">
+        <figure class="col-3">
+          <figcaption>JPG 90%</figcaption>
+          <img id="animacion1" src="img/MARBLES-90.jpeg" width="100%" alt="Foto canicas al 90%">
+        </figure>
+        <figure class="col-3">
+          <figcaption>JPG 75%</figcaption>
+          <img id="animacion2" src="img/MARBLES-75.jpeg" width="100%" alt="Foto canicas al 75%">
+        </figure>
+        <figure class="col-3">
+          <figcaption>JPG 50%</figcaption>
+          <img id="animacion3" src="img/MARBLES-50.jpeg" width="100%" alt="Foto canicas al 50%">
+        </figure>
+        <figure class="col-3">
+          <figcaption>JPG 25%</figcaption>
+          <img id="animacion4" src="img/MARBLES-25.jpeg" width="100%" alt="Foto canicas al 25%">
+        </figure>
+      </div>
+
+      <div class="row">
+        <div class="col-4">
+          <p>WAV</p>
+          <audio controls>
+            <source src="src/10_183881__erokia__elementary-wave-11.wav" type="audio/wav">
+          </audio>
+        </div>
+        <div class="col-4">
+          <p>MP3</p>
+          <audio controls>
+            <source src="src/10_183881__erokia__elementary-wave-11.mp3" type="audio/mp3">
+          </audio>
+        </div>
+        <div class="col-4">
+          <p>OGG</p>
+          <audio controls>
+            <source src="src/10_183881__erokia__elementary-wave-11.ogg" type="audio/ogg">
+          </audio>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="scripts/scripts.js"></script>
+</body>
+</html>

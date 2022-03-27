@@ -1,0 +1,58 @@
+.enunciado {
+  font-weight: bold;
+}
+
+.respuesta {
+  color: blue;
+}
+
+figcaption {
+  text-align: center;
+  padding: 10px 0;
+}
+
+.respuesta p {
+  text-align: center;
+}
+
+audio {
+  width: 100%;
+}
+
+#animacion1:hover{
+  animation:animation1 3s linear;
+}
+
+@keyframes animation1{
+  0%{
+  }
+  25%{
+    transform:scale(2.0);
+  }
+  50%{
+    transform: translate(0px, 100px);
+  }
+  100%{
+  }
+}
+
+#animacion2:hover{
+  animation:animation2 5s linear;
+}
+
+@keyframes animation2{
+  0%{
+  }
+  25%{
+    transform: rotate(25deg);
+  }
+  50%{
+    transform: rotate(0deg);
+    /* 0 para volver a la posición de 25 grados menos de los 25 ya desplazados */
+  }
+  75%{
+    transform: translate(0px, -100px);
+  }
+  100%{
+  }
+}
