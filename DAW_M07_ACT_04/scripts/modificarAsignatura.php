@@ -11,14 +11,14 @@
     $existe = consulta($con, $consultaExiste);
     $resultadoExiste = obtener_num_filas($existe);
 
-    if ($resultadoExiste == 0) {
-      $consulta = 'INSERT INTO asignatura (identificador, nombre) VALUES ("'.$identificador.'", "'.$nombre.'")';
+    if ($resultadoExiste == 1) {
+      $consulta = 'UPDATE asignatura SET nombre="'.$nombre.'" WHERE identificador="'.$identificador.'";';
       $resultado = consulta($con, $consulta);
       cerrar_conexion($con);
       header("Location: ../validar.php");
     } else {
       cerrar_conexion($con);
-      header('Location: ../validar.php?error=2');
+      header('Location: ../validar.php?error=4');
     }
   } else {
     header('Location: ../validar.php?error=1');

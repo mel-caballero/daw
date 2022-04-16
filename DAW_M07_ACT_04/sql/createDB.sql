@@ -40,7 +40,7 @@ create table nota (
 
 insert into usuario(dni, apellido, tipo_usuario) values('12345678A', 'Caballero', 0);
 insert into usuario(dni, apellido, tipo_usuario) values('12345678B', 'Pastor', 1);
-insert into usuario(dni, apellido, tipo_usuario) values('12345678c', 'BlaBla', 1);
+insert into usuario(dni, apellido, tipo_usuario) values('12345678C', 'Gonzalez', 1);
 
 insert into asignatura(identificador, nombre) values(1, 'POO');
 insert into asignatura(identificador, nombre) values(2, 'BD');

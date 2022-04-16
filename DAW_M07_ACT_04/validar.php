@@ -7,12 +7,11 @@
   <meta name="author" content="Melanie Caballero">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="styles/styles.css">
-  <title>Document</title>
+  <title>M07 Actividad 4</title>
 </head>
 <body class="container my-5">
   <?php 
     session_start(); 
-    
     if (empty($_SESSION['dni']) && empty($_SESSION['apellido'])) {
       if (isset($_POST['dni']) && isset($_POST['apellido'])) {
         $_SESSION['dni'] = $_POST['dni'];
@@ -20,9 +19,7 @@
       } else {
         echo '
           <script>
-            let error = document.getElementById("error"); 
-            error.classList.remove("d-none"); 
-            error.classList.add("d-block");
+            let error = document.getElementById("error");
             error.innerHTML = "ERROR : Faltan datos";
           </script>
         ';
@@ -33,7 +30,22 @@
     $con = conectar();
   ?>
   <h1>M07 Actividad 4</h1>  
-  <p id="error" class="badge bg-danger d-none"></p>
+  <p id="error" class="badge bg-danger d-none">
+    <?php 
+      if (isset($_GET['error'])) { 
+        if ($_GET['error'] == 1) { 
+          echo 'ERROR : Faltan Datos.'; 
+        } else if ($_GET['error'] == 2) { 
+          echo 'ERROR : Ya existe en la Base de datos.'; 
+        } else if ($_GET['error'] == 3) {
+          echo 'ERROR : No se pueden poner notas a Administradores.'; 
+        } else if ($_GET['error'] == 4) {
+          echo 'ERROR : No existe en la Base de datos.'; 
+        }
+        echo '<script>let show = document.getElementById("error"); show.classList.remove("d-none"); show.classList.add("d-block");</script>';
+      } 
+    ?>
+  </p>
   <div id="admin" class="d-none">
     <h2>Ejercicio 2.</h2>
     <div class="enunciado">
@@ -105,13 +117,12 @@
             <div class="col">
               <select id="lista" class="form-control" name="asignatura">
                 <?php
-
-                  $consultaAsignaturas = 'select identificador, nombre from asignatura;';
+                  $consultaAsignaturas = 'SELECT identificador, nombre FROM asignatura;';
                   $resultadoAsignaturas = consulta($con, $consultaAsignaturas);
 
                   while($filaAsignaturas = obtener_resultados($resultadoAsignaturas)){
                     extract($filaAsignaturas);
-                    echo "<option value='$identificador'>$nombre</option>";
+                    echo '<option value="'.$identificador.'">'.$nombre.'</option>';
                   }
                 ?>
               </select>
@@ -128,10 +139,11 @@
       
       <hr>
 
-      <!-- TODO Modificar Usuario -->
+      <!-- Modificar Usuario -->
       <form action="scripts/modificarUsuario.php" method="POST">
         <fieldset>
           <legend>Modificar usuario</legend>
+          <p>Escribe el DNI del usuario que quieras modificar su apellido o el tipo de usuario:</p>
           <div class="row">
             <div class="col-3">
               <input type="text" class="form-control" name="dniModificaUsuario" placeholder="DNI usuario">
@@ -151,10 +163,11 @@
         </fieldset>
       </form>
       
-      <!-- TODO Modificar asignaturas -->
+      <!-- Modificar asignaturas -->
       <form action="scripts/modificarAsignatura.php" method="POST">
         <fieldset>
           <legend>Modificar asignatura</legend>
+          <p>Escribe el identificador de la asignatura que le quieras modificar el nombre:</p>
           <div class="row">
             <div class="col-3 container">
               <input type="text" class="form-control" name="identificador" placeholder="Identificador asignatura">
@@ -170,10 +183,11 @@
         </fieldset>
       </form>
 
-      <!-- TODO Modificar notas -->
+      <!-- Modificar notas -->
       <form action="scripts/modificarNota.php" method="POST">
         <fieldset>
           <legend>Modificar nota</legend>
+          <p>Escribe el DNI del usuario y la asignatura de la nota que quieras modificar:</p>
           <div class="row">
             <div class="col">
               <input type="text" class="form-control" name="dniNota" placeholder="DNI">
@@ -181,13 +195,12 @@
             <div class="col">
               <select id="lista" class="form-control" name="asignatura">
                 <?php
-
-                  $consultaAsignaturas = 'select identificador, nombre from asignatura;';
+                  $consultaAsignaturas = 'SELECT identificador, nombre FROM asignatura;';
                   $resultadoAsignaturas = consulta($con, $consultaAsignaturas);
 
                   while($filaAsignaturas = obtener_resultados($resultadoAsignaturas)){
                     extract($filaAsignaturas);
-                    echo "<option value='$identificador'>$nombre</option>";
+                    echo '<option value="'.$identificador.'">'.$nombre.'</option>';
                   }
                 ?>
               </select>
@@ -240,33 +253,33 @@
         </div>
       </div>
 
-      <!-- TODO Eliminar notas -->
+      <!-- Eliminar notas -->
       <form action="scripts/eliminarNota.php" method="POST">
         <fieldset>
           <legend>Eliminar nota</legend>
           <div class="row">
-            <div class="col">
+            <div class="col-3">
               <input type="text" class="form-control" name="dniNota" placeholder="DNI">
             </div>
-            <div class="col">
+            <div class="col-3">
               <select id="lista" class="form-control" name="asignatura">
                 <?php
 
-                  $consultaAsignaturas = 'select identificador, nombre from asignatura;';
+                  $consultaAsignaturas = 'SELECT identificador, nombre FROM asignatura;';
                   $resultadoAsignaturas = consulta($con, $consultaAsignaturas);
 
                   while($filaAsignaturas = obtener_resultados($resultadoAsignaturas)){
                     extract($filaAsignaturas);
-                    echo "<option value='$identificador'>$nombre</option>";
+                    echo '<option value="'.$identificador.'">'.$nombre.'</option>';
                   }
                 ?>
               </select>
             </div>
-            <div class="col">
-              <input type="text" class="form-control" name="notaNota" placeholder="Nota">
+            <div class="col-3">
+              
             </div>
             
-            <div class="col">
+            <div class="col-3">
               <button type="submit" class="btn btn-primary">Eliminar nota</button>
             </div>
         </fieldset>
@@ -285,7 +298,7 @@
                   <input type="text" class="form-control" name="dniMostrarDatos" placeholder="DNI usuario">
                 </div>
                 <div class="col">
-                  <button type="submit" class="btn btn-primary">Mostrar datos</button>
+                  <button type="submit" name="modificar" class="btn btn-primary">Mostrar datos</button>
                 </div>
               </div>
             </fieldset>
@@ -303,7 +316,7 @@
     <div class="respuesta">
       <p>
         <?php
-            $consultaUsuario = 'select apellido from usuario where dni="'.$_SESSION['dni'].'";';
+            $consultaUsuario = 'SELECT apellido FROM usuario WHERE dni="'.$_SESSION['dni'].'";';
             $resultadoUsuario = consulta($con, $consultaUsuario);
 
             while($filaUsuario = obtener_resultados($resultadoUsuario)){
@@ -321,7 +334,7 @@
         </thead>
         <tbody id="tablaNotas">
           <?php
-            $consultaNotas = 'select alumno, nombre, nota from nota, asignatura where asignatura=identificador AND alumno="'.$_SESSION['dni'].'";';
+            $consultaNotas = 'SELECT alumno, nombre, nota FROM nota, asignatura WHERE asignatura=identificador AND alumno="'.$_SESSION['dni'].'";';
             $resultadoNotas = consulta($con, $consultaNotas);
             $numFilasNotas = obtener_num_filas($resultadoNotas);
 
@@ -347,17 +360,11 @@
   </div>
   
   <?php
-    //require('scripts/database.php');
-
-    
-
-    //$con = conectar();
-
-    $consultaValidar = 'select * from usuario where dni="'.$_SESSION['dni'].'" AND apellido="'.$_SESSION['apellido'].'";';
+    $consultaValidar = 'SELECT * FROM usuario WHERE dni="'.$_SESSION['dni'].'" AND apellido="'.$_SESSION['apellido'].'";';
     $resultadoValidar = consulta($con, $consultaValidar);
     $numFilasValidar = obtener_num_filas($resultadoValidar);
 
-    $consultaNotas = 'select alumno, nombre, nota from nota, asignatura where asignatura=identificador AND alumno="'.$_SESSION['dni'].'";';
+    $consultaNotas = 'SELECT alumno, nombre, nota FROM nota, asignatura WHERE asignatura=identificador AND alumno="'.$_SESSION['dni'].'";';
     $resultadoNotas = consulta($con, $consultaNotas);
     $numFilasNotas = obtener_num_filas($resultadoNotas);
 
@@ -382,8 +389,6 @@
           echo '
             <script>
               let error = document.getElementById("error"); 
-              error.classList.remove("d-none"); 
-              error.classList.add("d-block");
               error.innerHTML = "ERROR : Este alumno no tiene notas";
             </script>
           ';
@@ -393,8 +398,6 @@
       echo '
         <script>
           let error = document.getElementById("error"); 
-          error.classList.remove("d-none"); 
-          error.classList.add("d-block");
           error.innerHTML = "ERROR : El usuario no existe";
         </script>
       ';

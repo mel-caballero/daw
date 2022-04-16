@@ -9,42 +9,42 @@
   <title>Mostrar datos</title>
 </head>
 <body class="container my-5">
-<?php
-  require("database.php");
-  $con = conectar();
+  <?php
+    require("database.php");
+    $con = conectar();
 
-  $dni = $_POST['dniMostrarDatos'];
+    $dni = $_POST['dniMostrarDatos'];
 
-  $consultaUsuario = 'select * from usuario where dni="'.$dni.'";';
-  $resultadoUsuario = consulta($con, $consultaUsuario);
+    $consultaUsuario = 'select * from usuario where dni="'.$dni.'";';
+    $resultadoUsuario = consulta($con, $consultaUsuario);
 
-  while($filaUsuario = obtener_resultados($resultadoUsuario)){
-    extract($filaUsuario);
-    echo '<div class="row"><div class="col-10"><h1>Notas de '.$apellido.' con DNI '.$dni.'</h1></div>';
-  }
+    while($filaUsuario = obtener_resultados($resultadoUsuario)){
+      extract($filaUsuario);
+      echo '<div class="row"><div class="col-10"><h1>Notas de '.$apellido.' con DNI '.$dni.'</h1></div>';
+    }
 
-  echo '<div class="col-2"><a href="../validar.php" class="badge bg-info text-dark">Volver</a></div></div>';
+    echo '<div class="col-2"><a href="../validar.php" class="badge bg-info text-dark">Volver</a></div></div>';
 
-  echo '<table class="table">
-      <thead>
-        <tr>
-          <th scope="col">ASIGNATURA</th>
-          <th scope="col">NOTAS</th>
-        </tr>
-      </thead>
-      <tbody id="tablaNotas">';
-      
-  $consultaNotas = 'select alumno, nombre, nota from nota, asignatura where asignatura=identificador AND alumno="'.$dni.'";';
-  $resultadoNotas = consulta($con, $consultaNotas);
-  $numFilasNotas = obtener_num_filas($resultadoNotas);
-
-  while($filaNotas = obtener_resultados($resultadoNotas)){
-    extract($filaNotas);
-    echo '<tr><th scope="row">'.$nombre.'</th><td>'.$nota.'</td></tr>';
-  }
+    echo '<table class="table">
+        <thead>
+          <tr>
+            <th scope="col">ASIGNATURA</th>
+            <th scope="col">NOTAS</th>
+          </tr>
+        </thead>
+        <tbody id="tablaNotas">';
         
-  echo '</tbody>
-    </table>';
-?>
+    $consultaNotas = 'select alumno, nombre, nota from nota, asignatura where asignatura=identificador AND alumno="'.$dni.'";';
+    $resultadoNotas = consulta($con, $consultaNotas);
+    $numFilasNotas = obtener_num_filas($resultadoNotas);
+
+    while($filaNotas = obtener_resultados($resultadoNotas)){
+      extract($filaNotas);
+      echo '<tr><th scope="row">'.$nombre.'</th><td>'.$nota.'</td></tr>';
+    }
+          
+    echo '</tbody>
+      </table>';
+  ?>
 </body>
 </html>
