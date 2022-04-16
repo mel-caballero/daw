@@ -17,36 +17,19 @@
     <p>La aplicación tendrá como página principal una pantalla de validación de usuario. Constará de un formulario con un campo de texto para introducir el DNI, otro campo de texto para introducir el apellido, y un botón de entrada.</p>
   </div>
   <div class="respuesta">
-
-  </div>
-  <h2>Ejercicio 2.</h2>
-  <div class="enunciado">
-    <p>Los administradores, una vez validados en la pantalla anterior, accederán a una pantalla desde la que podrán realizar las siguientes operaciones:</p>
-    <ul>
-      <li>Dar de alta usuarios: mediante un formulario se darán de alta en la base de datos nuevos usuarios.</li>
-      <li>Dar de alta asignaturas: mediante un formulario se darán de alta en la base de datos nuevas asignaturas.</li>
-      <li>Poner nota: mediante un formulario se dará de alta una nota en la base de datos, para un alumno y una asignatura seleccionados.</li>
-      <li>Modificar datos: se podrá seleccionar un usuario, una asignatura o una nota concreta, para modificar los datos.</li>
-      <li>Eliminar usuarios y asignaturas: se podrá seleccionar un usuario, una asignatura o una nota concreta, para el borrado de los datos.</li>
-      <li>Visualización de notas: se seleccionará un usuario y se mostrará en una tabla la nota de cada asignatura de ese usuario.</li>
-    </ul>
-  </div>
-  <div class="respuesta">
-
-  </div>
-  <h2>Ejercicio 3.</h2>
-  <div class="enunciado">
-    <p>Los usuarios normales, una vez validados en la pantalla anterior, accederán a una pantalla donde verán en una tabla sus notas obtenidas en cada asignatura.</p>
-  </div>
-  <div class="respuesta">
-
-  </div>
-  <h2>Ejercicio 4.</h2>
-  <div class="enunciado">
-    <p>Hay que incorporar, en las pantallas que lo requieran, un botón o link de desconexión, de tal forma que el usuario que esté usando la aplicación pueda abandonar la sesión.</p>
-  </div>
-  <div class="respuesta">
-
+    <form action="validar.php" method="POST">
+      <div class="row">
+        <div class="col-4">
+          <input type="text" class='form-control' name="dni" placeholder="DNI">
+        </div>
+        <div class="col-4">
+          <input type="text" class='form-control' name="apellido" placeholder="Apellido">
+        </div>
+        <div class="col-4">
+          <button type="submit" class="btn btn-primary btn-block">Validar usuario</button>
+        </div>
+      </div>
+    </form>
   </div>
 </body>
 </html>

@@ -36,4 +36,19 @@ create table nota (
 	nota int
 );
 
+
+
 insert into usuario(dni, apellido, tipo_usuario) values('12345678A', 'Caballero', 0);
+insert into usuario(dni, apellido, tipo_usuario) values('12345678B', 'Pastor', 1);
+insert into usuario(dni, apellido, tipo_usuario) values('12345678c', 'BlaBla', 1);
+
+insert into asignatura(identificador, nombre) values(1, 'POO');
+insert into asignatura(identificador, nombre) values(2, 'BD');
+
+insert into nota(alumno, asignatura, nota) values('12345678B', 1, 7);
+insert into nota(alumno, asignatura, nota) values('12345678B', 2, 6);
+
+select * from usuario;
+select * from asignatura;
+select * from nota;
+select alumno, nombre, nota from nota, asignatura where asignatura=identificador AND alumno='12345678B';
