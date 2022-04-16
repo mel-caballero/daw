@@ -151,10 +151,10 @@
         </fieldset>
       </form>
       
-      <!-- TODO Nodificar asignaturas -->
-      <form action="scripts/altaAsignatura.php" method="POST">
+      <!-- TODO Modificar asignaturas -->
+      <form action="scripts/modificarAsignatura.php" method="POST">
         <fieldset>
-          <legend>Alta asignatura</legend>
+          <legend>Modificar asignatura</legend>
           <div class="row">
             <div class="col-3 container">
               <input type="text" class="form-control" name="identificador" placeholder="Identificador asignatura">
@@ -165,17 +165,15 @@
             <div class="col-3">
             </div>
             <div class="col-3">
-              <button type="submit" class="btn btn-primary">Crear asignatura</button>
+              <button type="submit" class="btn btn-primary">Modificar asignatura</button>
             </div>
         </fieldset>
       </form>
 
-      <hr>
-
       <!-- TODO Modificar notas -->
-      <form action="scripts/altaNota.php" method="POST">
+      <form action="scripts/modificarNota.php" method="POST">
         <fieldset>
-          <legend>Poner nota</legend>
+          <legend>Modificar nota</legend>
           <div class="row">
             <div class="col">
               <input type="text" class="form-control" name="dniNota" placeholder="DNI">
@@ -199,36 +197,101 @@
             </div>
             
             <div class="col">
-              <button type="submit" class="btn btn-primary">Añadir nota</button>
+              <button type="submit" class="btn btn-primary">Modificar nota</button>
             </div>
         </fieldset>
       </form>
 
       <hr>
 
-      <!-- TODO Eliminar datos -->
-      <form action="eliminarDatos.php" method="POST">
+      <div class="row">
+        <!-- Eliminar Usuario -->
+        <div class="col-6">
+          <form action="scripts/eliminarUsuario.php" method="POST">
+            <fieldset>
+              <legend>Eliminar usuario</legend>
+              <div class="row">
+                <div class="col">
+                  <input type="text" class="form-control" name="dniEliminarUsuario" placeholder="DNI usuario">
+                </div>
+                <div class="col">
+                  <button type="submit" class="btn btn-primary">Eliminar usuario</button>
+                </div>
+              </div>
+            </fieldset>
+          </form>
+        </div>
+      
+        <!-- Eliminar asignaturas -->
+        <div class="col-6">
+          <form action="scripts/eliminarAsignatura.php" method="POST">
+            <fieldset>
+              <legend>Eliminar asignatura</legend>
+              <div class="row">
+                <div class="col">
+                  <input type="text" class="form-control" name="identificador" placeholder="Identificador asignatura">
+                </div>
+                <div class="col">
+                  <button type="submit" class="btn btn-primary">Eliminar asignatura</button>
+                </div>
+              </div>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+
+      <!-- TODO Eliminar notas -->
+      <form action="scripts/eliminarNota.php" method="POST">
         <fieldset>
-          <legend>Eliminar datos</legend>
+          <legend>Eliminar nota</legend>
           <div class="row">
             <div class="col">
+              <input type="text" class="form-control" name="dniNota" placeholder="DNI">
             </div>
-          </div>
+            <div class="col">
+              <select id="lista" class="form-control" name="asignatura">
+                <?php
+
+                  $consultaAsignaturas = 'select identificador, nombre from asignatura;';
+                  $resultadoAsignaturas = consulta($con, $consultaAsignaturas);
+
+                  while($filaAsignaturas = obtener_resultados($resultadoAsignaturas)){
+                    extract($filaAsignaturas);
+                    echo "<option value='$identificador'>$nombre</option>";
+                  }
+                ?>
+              </select>
+            </div>
+            <div class="col">
+              <input type="text" class="form-control" name="notaNota" placeholder="Nota">
+            </div>
+            
+            <div class="col">
+              <button type="submit" class="btn btn-primary">Eliminar nota</button>
+            </div>
         </fieldset>
       </form>
       
       <hr>
 
-      <!-- TODO Mostrar datos -->
-      <form action="mostrarDatos.php" method="POST">
-        <fieldset>
-          <legend>Mostrar datos</legend>
-          <div class="row">
-            <div class="col">
-            </div>
-          </div>
-        </fieldset>
-      </form>
+      <!-- Mostrar datos -->
+      <div class="row">
+        <div class="col-6">
+          <form action="scripts/mostrarDatos.php" method="POST">
+            <fieldset>
+              <legend>Mostrar Datos</legend>
+              <div class="row">
+                <div class="col">
+                  <input type="text" class="form-control" name="dniMostrarDatos" placeholder="DNI usuario">
+                </div>
+                <div class="col">
+                  <button type="submit" class="btn btn-primary">Mostrar datos</button>
+                </div>
+              </div>
+            </fieldset>
+          </form>
+        </div>
+      </div>
     </div>
   </div> 
 
