@@ -44,7 +44,7 @@
         imprimir();
       break;
     case "retirar":
-        //TODO retirar coches
+        
         if (isset($_POST['retirarType'])) {
           $retirarTipo = $_POST['retirarType'];
         }
