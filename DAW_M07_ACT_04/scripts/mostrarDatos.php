@@ -23,7 +23,7 @@
       echo '<div class="row"><div class="col-10"><h1>Notas de '.$apellido.' con DNI '.$dni.'</h1></div>';
     }
 
-    echo '<div class="col-2"><a href="../validar.php" class="badge bg-info text-dark">Volver</a></div></div>';
+    echo '<div class="col-2"><a href="../admin.php" class="badge bg-info text-dark">Volver</a></div></div>';
 
     echo '<table class="table">
         <thead>

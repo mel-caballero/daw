@@ -1,11 +1,11 @@
 <?php
   session_start();
-  require('database.php');
-
   session_destroy();
+
+  require('database.php');
 
   $con = conectar();
   cerrar_conexion($con);
   
-  header("Location: ../index.html");
+  header("Location: ../index.php");
 ?>

@@ -13,15 +13,30 @@
     $resultadoExiste = obtener_num_filas($existe);
 
     if ($resultadoExiste == 1) {
+      // Si el usuario es tipo Usuario para cambiar a Admin, se borran sus notas
+      $consultaIsUser = 'SELECT tipo_usuario FROM usuario WHERE dni="'.$dni.'";';
+      $resultadoIsUser = consulta($con, $consultaIsUser);
+
+      while($filaAsignaturas = obtener_resultados($resultadoIsUser)){
+        extract($filaAsignaturas);
+        $isUSer = $tipo_usuario;
+      }
+
+      if ($isUSer == 1) {
+        $consultaNotas = 'DELETE FROM nota WHERE alumno="'.$dni.'";';
+        $resultadoNotas = consulta($con, $consultaNotas);
+      }
+
       $consulta = 'UPDATE usuario SET apellido="'.$apellido.'", tipo_usuario="'.$tipo_usuario.'" WHERE dni="'.$dni.'";';
       $resultado = consulta($con, $consulta);
+
       cerrar_conexion($con);
-      header("Location: ../validar.php");
+      header("Location: ../admin.php");
     } else {
       cerrar_conexion($con);
-      header('Location: ../validar.php?error=4');
+      header('Location: ../admin.php?error=4');
     }
   } else {
-    header('Location: ../validar.php?error=1');
+    header('Location: ../admin.php?error=1');
   }
 ?>

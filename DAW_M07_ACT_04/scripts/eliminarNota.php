@@ -16,12 +16,12 @@
       $resultado = consulta($con, $consulta);
 
       cerrar_conexion($con);
-      header("Location: ../validar.php");
+      header("Location: ../admin.php");
     } else {
       cerrar_conexion($con);
-      header('Location: ../validar.php?error=4');
+      header('Location: ../admin.php?error=4');
     }
   } else {
-    header('Location: ../validar.php?error=1');
+    header('Location: ../admin.php?error=1');
   }
 ?>
