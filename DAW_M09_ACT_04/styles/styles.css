@@ -1,0 +1,93 @@
+header, main, footer {
+  width: 100%;
+  float: left;
+}
+
+header {
+  height: 10px;
+}
+
+main {
+  height: 90vh;
+}
+
+footer {
+  width: 100%;
+  text-align: center;
+}
+
+nav {
+ text-align: center;
+}
+
+ul {
+  padding: 0;
+}
+
+ul li {
+  display: inline-block;
+  margin: 0px 90px;
+}
+
+main sect {
+  width: 100%;
+  float: left;
+}
+
+#tabla, #form {
+  width: 50%;
+  float: left;
+}
+
+table {
+  width: 90%;
+}
+
+table, th, td {
+  border: 1px solid;
+}
+
+#libros art {
+  width: 33%;
+  float: left;
+}
+
+@media screen and (min-width: 600px) and (max-width:900px) { 
+  ul li {
+    display: inline-block;
+    margin: 0px 20px;
+  }
+  main {
+    height: auto;
+  }
+  
+  #tabla, #form {
+    width: 100%;
+    float: left;
+  }
+
+  #libros art {
+    width: 50%;
+    float: left;
+  }
+}
+
+@media screen and (max-width:600px){ 
+  ul li {
+    display: inline-block;
+    margin: 0px 20px;
+  }
+  main {
+    height: auto;
+  }
+  
+  #tabla, #form {
+    width: 100%;
+    float: left;
+  }
+
+  #libros art {
+    width: 100%;
+    float: left;
+  }
+}

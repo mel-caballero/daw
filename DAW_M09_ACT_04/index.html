@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="Melanie Caballero">
+  <link rel="stylesheet" type="text/css" href="styles/styles.css">
+  <title>M09 ACT 04</title>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#color_magia">El color de la magia</a></li>
+        <li><a href="#ritos_iguales">Ritos iguales</a></li>
+        <li><a href="#ronda_noche">Ronda de noche</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <h1>Libros</h1>
+    <sect>
+      <art id="tabla">
+        <table>
+          <caption>Datos sobre los libros</caption>
+          <thead>
+            <tr>
+              <th id="titulo" scope="col">Título</th>
+              <th id="paginas" scope="col">Páginas</th>
+              <th id="genero" scope="col">Género</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th id="libro1" scope="row">El color de la magia</th>
+              <td headers="libro1 paginas">285</td>
+              <td headers="libro1 genero">Literatura fantástica</td>
+            </tr>
+            <tr>
+              <th id="libro2" scope="row">Ritos iguales</th>
+              <td headers="libro2 paginas">290</td>
+              <td headers="libro2 genero">Literatura fantástica</td>
+            </tr>
+            <tr>
+              <th id="libro3" scope="row">Ronda de noche</th>
+              <td headers="libro3 paginas">312</td>
+              <td headers="libro3 genero">Literatura fantástica, viaje a través del tiempo</td>
+            </tr>
+          </tbody>
+        </table>
+      </art>
+      <art id="form">
+        <p><em>Regístrate para obtener más información</em></p>
+        <form>
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre">
+          <label for="mail">email</label>
+          <input type="text" id="mail">
+          <fieldset>
+            <legend>Género favorito</legend>
+            <label for="miedo">Miedo</label>
+            <input type="radio" id="miedo" name="genero" value="miedo">
+            <label for="thriller">Thriller</label>
+            <input type="radio" id="thriller" name="genero" value="thriller">
+            <label for="comedia">Comedia</label>
+            <input type="radio" id="comedia" name="genero" value="comedia">
+          </fieldset>
+          <button>Submit</button>
+        </form>
+      </art>
+    </sect>
+    <sect id="libros">
+      <art id="color_magia">
+        <h2>El color de la magia</h2>
+        <details>
+          <summary>Sinopsis</summary>
+          <p>es la primera obra publicada de la saga del Mundodisco de Terry Pratchett. Esta novela, a diferencia de otras muchas de la serie (que no suelen tener ni siquiera capítulos), está dividida en "libros" que narran historias cortas consecutivas con los mismos protagonistas.</p>
+          <figure>
+            <img src="img/el_color_de_la_magia.jpeg" width="150px" alt="Libro el color de la magia">
+            <figcaption>Portada libro el color de la magia</figcaption>
+          </figure>
+        </details>
+        <a href="https://es.wikipedia.org/wiki/El_color_de_la_magia">Más información</a>
+      </art>
+      <art id="ritos_iguales">
+        <h2>Ritos iguales</h2>
+        <details>
+          <summary>Sinopsis</summary>
+          <p>es la tercera novela de la saga Mundodisco de Terry Pratchett. El título original, Equal Rites, suena como Equal Rights, "Igualdad de Derechos", haciendo referencia a la temática del libro.</p>
+          <figure>
+            <img src="img/ritos_iguales.jpeg" width="150px" alt="Libro Ritos iguales">
+            <figcaption>Portada libro Ritos iguales</figcaption>
+          </figure>
+        </details>
+        <a href="https://es.wikipedia.org/wiki/Ritos_iguales">Más información</a>
+      </art>
+      <art id="ronda_noche">
+        <h2>Ronda de noche</h2>
+        <details>
+          <summary>Sinopsis</summary>
+          <p>es la 29ª novela de la saga de Mundodisco de Terry Pratchett, publicada en 2002, publicada en español en enero de 2010. Esta tiene como protagonista a Samuel Vimes en un extraño viaje durante lo que es el día más importante de su vida.</p>
+          <figure>
+            <img src="img/ronda_de_noche.jpeg" width="150px" alt="Libro Ronda de noche">
+            <figcaption>Portada libro Ronda de noche</figcaption>
+          </figure>
+        </details>
+        <a href="https://es.wikipedia.org/wiki/Ronda_de_noche_(novela)">Más información</a>
+      </art>
+    </sect>
+  </main>
+  <footer>
+    <a href="mailto:autor@e.c">autor@e.c</a>
+  </footer>
+</body>
+</html>
